@@ -1,4 +1,4 @@
-import { setLocalStorage } from './utils.mjs';
+import { setLocalStorage, getParams } from './utils.mjs';
 import { findProductById } from './productData.mjs';
 import { getLocalStorage } from './utils.mjs';
 
