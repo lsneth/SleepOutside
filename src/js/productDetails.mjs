@@ -1,8 +1,8 @@
 import { setLocalStorage, getLocalStorage } from './utils.mjs';
 import { findProductById } from './productData.mjs';
 
-export default function productDetails(productId){
-  const productData = findProductById(productId)
+export default async function productDetails(productId){
+  const productData = await findProductById(productId)
   renderProductDetails(productData)
 }
 
@@ -10,7 +10,7 @@ function renderProductDetails(productData){
   document.getElementById('brand-name').textContent = productData.Brand.Name
   document.getElementById('product-name').textContent = productData.Name
   
-  productImage = document.getElementById('product-image')
+  const productImage = document.getElementById('product-image')
   productImage.setAttribute('src', productData.Image)
   productImage.setAttribute('alt', productData.Name)
   
