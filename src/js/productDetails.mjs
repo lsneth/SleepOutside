@@ -16,7 +16,7 @@ function renderProductDetails(productData){
   
   document.getElementById('product-price').textContent = productData.FinalPrice
   document.getElementById('product-color').textContent = productData.Colors.ColorName
-  document.getElementById('product-description').textContent = productData.DescriptionHtmlSimple
+  document.getElementById('product-description').innerHTML = productData.DescriptionHtmlSimple
 
   document.getElementById('addToCart').setAttribute('data-id', productData.Id)  
 }
