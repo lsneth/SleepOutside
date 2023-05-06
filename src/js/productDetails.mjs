@@ -7,6 +7,7 @@ export default async function productDetails(productId){
 }
 
 function renderProductDetails(productData){
+  document.querySelector('title').textContent = `Sleep Outside | ${productData.Name}`
   document.getElementById('brand-name').textContent = productData.Brand.Name
   document.getElementById('product-name').textContent = productData.Name
   
