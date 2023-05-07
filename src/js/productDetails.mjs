@@ -40,6 +40,11 @@ async function addToCartHandler(e) {
   const cartItemCount = document.getElementById('item-count')
   cartItemCount.textContent = Number(cartItemCount.textContent) + 1
 }
+async function addArrow(){
+  const arrow = setTimeOut(5000)
+}
 document
   .getElementById('addToCart')
   .addEventListener('click', addToCartHandler)
+  .addEventListener('hidden', addArrow)
+
