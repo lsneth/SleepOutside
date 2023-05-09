@@ -16,16 +16,8 @@ function renderProductDetails(productData){
   productImage.setAttribute('src', productData.Image)
   productImage.setAttribute('alt', productData.Name)
   
-  const compareAtPrice = document.getElementById('compare-at-price')
-  compareAtPrice.textContent = `$${productData.SuggestedRetailPrice}`
-  compareAtPrice.style.color = 'red'
-  compareAtPrice.style.textDecoration = 'line-through'
-  compareAtPrice.style.display = 'inline'
-  
-  const price = document.getElementById('product-price')
-  price.textContent = `$${productData.FinalPrice}`
-  price.style.display = 'inline'
-
+  document.getElementById('compare-at-price').textContent = `$${productData.SuggestedRetailPrice}`  
+  document.getElementById('product-price').textContent = `$${productData.FinalPrice}`
   document.getElementById('product-color').textContent = productData.Colors.ColorName
   document.getElementById('product-description').innerHTML = productData.DescriptionHtmlSimple
 

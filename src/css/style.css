@@ -202,6 +202,30 @@ button {
   grid-column: 3;
 }
 
+.discounted-tag {
+  padding: 5px 15px;
+  margin: 5px 3px;
+  background-color: red;
+  color: white;
+  border-radius: 100px;
+  font-size: 12px;
+  display: inline;
+}
+
+.product-card__price {
+  display: inline;
+  padding-top: 100px;
+}
+
+#compare-at-price {
+  color: gray;
+  text-decoration: line-through;
+}
+
+#product-price {
+  margin: 0 2px;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
