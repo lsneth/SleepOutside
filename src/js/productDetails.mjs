@@ -4,6 +4,7 @@ import { findProductById } from './productData.mjs';
 export default async function productDetails(productId){
   const productData = await findProductById(productId)
   renderProductDetails(productData)
+  console.log(productData)
 }
 
 function renderProductDetails(productData){
@@ -15,7 +16,16 @@ function renderProductDetails(productData){
   productImage.setAttribute('src', productData.Image)
   productImage.setAttribute('alt', productData.Name)
   
-  document.getElementById('product-price').textContent = productData.FinalPrice
+  const compareAtPrice = document.getElementById('compare-at-price')
+  compareAtPrice.textContent = `$${productData.SuggestedRetailPrice}`
+  compareAtPrice.style.color = 'red'
+  compareAtPrice.style.textDecoration = 'line-through'
+  compareAtPrice.style.display = 'inline'
+  
+  const price = document.getElementById('product-price')
+  price.textContent = `$${productData.FinalPrice}`
+  price.style.display = 'inline'
+
   document.getElementById('product-color').textContent = productData.Colors.ColorName
   document.getElementById('product-description').innerHTML = productData.DescriptionHtmlSimple
 
