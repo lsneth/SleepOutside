@@ -28,3 +28,8 @@ export function getParam(paramName){
   const paramValue = urlParams.get(paramName)
   return paramValue
 }
+
+export function renderListWithTemplate(templateFn, parentElement, list){
+  const html = list.map((item) => templateFn(item));
+  parentElement.innerHTML = html;
+}
