@@ -2,17 +2,17 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error('Bad Response');
+    throw new Error('Bad Response', res);
   }
 }
 
 export function getData(category = 'tents') {
-  return fetch(`../public/json/${category}.json`)
+  return fetch(`../json/${category}.json`)
     .then(convertToJson)
-    .then((data) => data)
+    .then((data) => data);
 }
 
 export async function findProductById(id) {
   const products = await getData();
-  return products.find((item) => item.Id === id)
+  return products.find((item) => item.Id === id);
 }
