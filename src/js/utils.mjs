@@ -33,3 +33,9 @@ export function renderListWithTemplate(templateFn, parentElement, list){
   const html = list.map((item) => templateFn(item));
   parentElement.innerHTML = html;
 }
+
+export function getCartItemCount(){
+  const cartItems = getLocalStorage('so-cart')
+  if (cartItems===null) return 0
+  return cartItems.length
+}

@@ -110,6 +110,24 @@ button {
   fill: gray;
 }
 
+.cart:hover #item-count {
+  background-color: #ffd8b6;
+}
+
+#item-count {
+  position: absolute;
+  background-color: var(--primary-color);
+  color: black;
+  padding: 1px 4px;
+  border-radius: 7px;
+  font-size: 11px;
+  margin: -7px 0 0 -11px;
+}
+
+#cart-link {
+  text-decoration: none;
+}
+
 /* End cart icon styles */
 
 .mission {
