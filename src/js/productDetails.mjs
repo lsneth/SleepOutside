@@ -35,6 +35,10 @@ function addProductToCart(product) {
 async function addToCartHandler(e) {
   const product = await findProductById(e.target.dataset.id)
   addProductToCart(product)
+  
+  // update the backpack superscript count on add to cart
+  const cartItemCount = document.getElementById('item-count')
+  cartItemCount.textContent = Number(cartItemCount.textContent) + 1
 }
 document
   .getElementById('addToCart')
