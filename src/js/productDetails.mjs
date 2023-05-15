@@ -39,12 +39,15 @@ async function addToCartHandler(e) {
   // update the backpack superscript count on add to cart
   const cartItemCount = document.getElementById('item-count')
   cartItemCount.textContent = Number(cartItemCount.textContent) + 1
+
+  const backpack = document.getElementById('backpack-icon');
+  backpack.setAttribute('class', 'bouncing');
+  setTimeout(backpack.classList.remove('bouncing'), 5000);
+
 }
-async function addArrow(){
-  const arrow = setTimeOut(5000)
-}
+
 document
   .getElementById('addToCart')
   .addEventListener('click', addToCartHandler)
-  .addEventListener('hidden', addArrow)
+
 
