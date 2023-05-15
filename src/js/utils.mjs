@@ -31,7 +31,36 @@ export function getParam(paramName){
 
 export function renderListWithTemplate(templateFn, parentElement, list){
   const html = list.map((item) => templateFn(item));
+  parentElement.innerHTML = html.join('');
+}
+
+export async function  renderWithTemplate(templateFn, parentElement, callback){
+  const html = await templateFn();
   parentElement.innerHTML = html;
+  callback()
+}
+
+function loadTemplate(path){
+    return async function() {
+      return await fetch(path).then((res)=>res.text()).catch((error)=>console.log(error))
+    }
+}
+
+export function loadHeaderFooter(){
+  const headerTemplateFn = loadTemplate("/partials/header.html");
+  const footerTemplateFn = loadTemplate("/partials/footer.html");
+
+  headerTemplateFn()
+
+  const header = document.getElementById('header')
+  const footer = document.getElementById('footer')
+
+  // add the count of items in the cart to the backpack icon
+  function setCartSuperscript(){
+  document.getElementById('item-count').textContent = getCartItemCount();}
+
+  renderWithTemplate(headerTemplateFn, header, setCartSuperscript)
+  renderWithTemplate(footerTemplateFn, footer)
 }
 
 export function getCartItemCount(){
