@@ -4,7 +4,6 @@ import { findProductById } from './productData.mjs';
 export default async function productDetails(productId){
   const productData = await findProductById(productId)
   renderProductDetails(productData)
-  console.log(productData)
 }
 
 function renderProductDetails(productData){
