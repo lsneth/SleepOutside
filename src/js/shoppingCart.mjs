@@ -28,5 +28,16 @@ export default async function cartList(){
   } else {
     const parentEl = document.querySelector('.product-list');
     renderListWithTemplate(cartItemTemplate, parentEl, cartItems);
+
+    // Delete 'hide' class in div 'cart-footer'
+    document.querySelector('div.cart-footer').classList.remove('hide');
+    // Display Total in Cart
+    document.querySelector('.cart-total').innerHTML = `Total: $${calculateTotal(cartItems)}`;
   }
+}
+
+function calculateTotal(list) {
+  let sumTotal = 0;
+  list.map((item) => sumTotal += parseFloat(item.FinalPrice));
+  return sumTotal
 }
