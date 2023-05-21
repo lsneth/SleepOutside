@@ -244,6 +244,15 @@ button {
   margin: 0 2px;
 }
 
+.hide {
+  display: none;
+}
+
+.cart-total {
+  padding: 10px;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
