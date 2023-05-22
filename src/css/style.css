@@ -253,6 +253,19 @@ button {
   font-weight: bold;
 }
 
+.products-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin: 50px 0;
+}
+
+.products-categories a {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin: 30px;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;
