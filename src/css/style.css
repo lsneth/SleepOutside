@@ -235,7 +235,7 @@ button {
   padding-top: 100px;
 }
 
-#compare-at-price {
+.compare-at-price {
   color: gray;
   text-decoration: line-through;
 }
