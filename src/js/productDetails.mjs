@@ -12,7 +12,7 @@ function renderProductDetails(productData){
   document.getElementById('product-name').textContent = productData.Name
   
   const productImage = document.getElementById('product-image')
-  productImage.setAttribute('src', `../${productData.Image}`)
+  productImage.setAttribute('src', `${productData.Images.PrimaryLarge}`)
   productImage.setAttribute('alt', productData.Name)
   
   document.getElementById('compare-at-price').textContent = `$${productData.SuggestedRetailPrice}`  
