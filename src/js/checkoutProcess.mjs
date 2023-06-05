@@ -90,7 +90,7 @@ const checkoutProcess = {
       const res = await checkout(json);
       console.log(res);
     } catch (err) {
-      console.log(err);
+      console.log('Sorry, but something went wrong.',err);
     }
   },
 
