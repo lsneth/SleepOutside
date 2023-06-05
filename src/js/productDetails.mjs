@@ -5,7 +5,7 @@ export default async function productDetails(productId){
   const productData = await findProductById(productId)
   renderProductDetails(productData)
 }
-
+``
 function renderProductDetails(productData){
   document.querySelector('title').textContent = `Sleep Outside | ${productData.Name}`
   document.getElementById('brand-name').textContent = productData.Brand.Name
@@ -40,9 +40,15 @@ async function addToCartHandler(e) {
   const cartItemCount = document.getElementById('item-count')
   cartItemCount.textContent = Number(cartItemCount.textContent) + 1
 
-  const backpack = document.getElementById('backpack-icon');
-  backpack.setAttribute('class', 'bouncing');
-  setTimeout(backpack.classList.remove('bouncing'), 5000);
+  // let backpack = document.getElementById('backpack-icon');
+  let backpack = document.querySelector('.cart');
+  
+  backpack.classList.add("bouncing");
+  console.log(backpack);
+  // backpack.setAttribute('class', 'bouncing');
+  setTimeout(()=> {
+    backpack.classList.remove('bouncing');
+  }, 1000);
 
 }
 
