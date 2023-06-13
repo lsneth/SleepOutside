@@ -14,7 +14,6 @@
 
   <body>
     <header class="divider" id="header"></header>
-
     <main class="divider">
       <section class="products checkout-form">
         <h2>Review & Place your Order</h2>
@@ -41,7 +40,14 @@
             <!-- TODO: remove -->
             <input type="number" id="cardNumber" name="cardNumber" required />
             <label for="expiration">Expiration</label>
-            <input type="text" id="expiration" name="expiration" required />
+            <input
+              type="text"
+              id="expiration"
+              name="expiration"
+              required
+              placeholder="MM/YY"
+              pattern="\d{2}/\d{2}"
+            />
             <label for="code">Security Code</label>
             <!-- TODO: remove -->
             <input type="number" id="code" name="code" required />

@@ -266,6 +266,26 @@ button {
   margin: 30px;
 }
 
+.alert-message {
+  background-color: var(--primary-color);
+  padding: 10px;
+}
+
+.alert-text {
+  margin: 0;
+  display: inline;
+}
+
+.alert-x {
+  margin: 0;
+  display: inline;
+  float: right;
+}
+
+.alert-x:hover {
+  cursor: pointer;
+}
+
 form input {
   display: flex;
   flex-direction: column;

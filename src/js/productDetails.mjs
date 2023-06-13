@@ -1,4 +1,4 @@
-import { setLocalStorage, getLocalStorage } from './utils.mjs';
+import { setLocalStorage, getLocalStorage, alertMessage } from './utils.mjs';
 import { findProductById } from './externalServices.mjs';
 
 export default async function productDetails(productId){
@@ -39,6 +39,8 @@ async function addToCartHandler(e) {
   // update the backpack superscript count on add to cart
   const cartItemCount = document.getElementById('item-count')
   cartItemCount.textContent = Number(cartItemCount.textContent) + 1
+
+  alertMessage('Added to cart!')
 }
 document
   .getElementById('addToCart')
