@@ -37,7 +37,7 @@ export function renderListWithTemplate(templateFn, parentElement, list){
 export async function  renderWithTemplate(templateFn, parentElement, callback){
   const html = await templateFn();
   parentElement.innerHTML = html;
-  callback()
+  callback && callback()
 }
 
 function loadTemplate(path){
