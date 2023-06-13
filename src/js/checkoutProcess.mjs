@@ -14,7 +14,6 @@ function formDataToJSON(formElement) {
 
 function packageItems(items) {
   const simplifiedItems = items.map((item) => {
-    // console.log(item);
     return {
       id: item.Id,
       price: item.FinalPrice,
@@ -68,16 +67,13 @@ const checkoutProcess = {
   displayOrderTotals: function() {
     // once the totals are all calculated display them in the order summary page
     const shipping = document.querySelector(this.outputSelector + " #shipping");
-    console.log(shipping)
     const tax = document.querySelector(this.outputSelector + " #tax");
     const orderTotal = document.querySelector(
       this.outputSelector + " #orderTotal"
     );
     shipping.innerText = "$" + this.shipping;
     tax.innerText = "$" + this.tax;
-    orderTotal.innerText = "$" + this.orderTotal;
-    console.log(this.orderTotal)
-    
+    orderTotal.innerText = "$" + this.orderTotal;    
   },
   checkout: async function (form) {
     const json = formDataToJSON(form);
