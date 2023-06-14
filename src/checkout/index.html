@@ -16,47 +16,49 @@
     <header class="divider" id="header"></header>
 
     <main class="divider">
-      <section class="products">
+      <section class="products checkout-form">
         <h2>Review & Place your Order</h2>
 
         <form name="checkout">
           <fieldset>
-            <legend> Shipping</legend>
+            <legend>Shipping</legend>
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" required>
+            <input type="text" id="fname" name="fname" required />
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" required>
+            <input type="text" id="lname" name="lname" required />
             <label for="street">Street</label>
-            <input type="text" id="street" name="street" required>
+            <input type="text" id="street" name="street" required />
             <label for="city">City</label>
-            <input type="text" id="city" name="city" required>
+            <input type="text" id="city" name="city" required />
             <label for="state">State</label>
-            <input type="text" id="state" name="state" required>
+            <input type="text" id="state" name="state" required />
             <label for="zip">Zip</label>
-            <input type="number" id="zip" name="zip" required>
+            <input type="number" id="zip" name="zip" required />
           </fieldset>
           <fieldset>
-            <legend> Payment</legend>
+            <legend>Payment</legend>
             <label for="cardNumber">Card number</label>
-            <input type="number" id="cardNumber" name="cardNumber" required>
+            <!-- TODO: remove -->
+            <input type="number" id="cardNumber" name="cardNumber" required />
             <label for="expiration">Expiration</label>
-            <input type="date" id="expiration" name="expiration" required>
+            <input type="text" id="expiration" name="expiration" required />
             <label for="code">Security Code</label>
-            <input type="number" id="code" name="code" required>
+            <!-- TODO: remove -->
+            <input type="number" id="code" name="code" required />
           </fieldset>
-          <fieldset>
-            <legend> Order Summary</legend>
+          <fieldset class="checkout-summary">
+            <legend>Order Summary</legend>
             <ul>
               <li>
-                <label for="cartTotal">Item Subtotal(<span id="num-items"></span>)</label>
+                <p>Item Subtotal(<span id="num-items"></span> items)</p>
                 <p name="cartTotal" id="cartTotal"></p>
               </li>
               <li>
-                <label for="shipping">Shipping Estimate</label>
+                <p>Shipping Estimate</p>
                 <p id="shipping"></p>
               </li>
               <li>
-                <label for="tax">Tax</label>
+                <p>Tax</p>
                 <p id="tax"></p>
               </li>
               <li>
@@ -65,9 +67,8 @@
               </li>
             </ul>
           </fieldset>
+          <button id="checkout-button" type="submit">Checkout</button>
         </form>
-
-        <button id="checkout-button" type="submit">Checkout</button>
       </section>
     </main>
 

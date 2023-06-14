@@ -14,7 +14,6 @@ function formDataToJSON(formElement) {
 
 function packageItems(items) {
   const simplifiedItems = items.map((item) => {
-    console.log(item);
     return {
       id: item.Id,
       price: item.FinalPrice,
@@ -74,18 +73,17 @@ const checkoutProcess = {
     );
     shipping.innerText = "$" + this.shipping;
     tax.innerText = "$" + this.tax;
-    orderTotal.innerText = "$" + this.orderTotal;
-
+    orderTotal.innerText = "$" + this.orderTotal;    
   },
   checkout: async function (form) {
     const json = formDataToJSON(form);
     // add totals, and item details
-    json.orderDate = new Date();
+    const orderDate = new Date()
+    json.orderDate = orderDate.toISOString()
     json.orderTotal = this.orderTotal;
     json.tax = this.tax;
     json.shipping = this.shipping;
     json.items = packageItems(this.list);
-    console.log(json);
     try {
       const res = await checkout(json);
       console.log(res);
