@@ -68,3 +68,21 @@ export function getCartItemCount(){
   if (cartItems===null) return 0
   return cartItems.length
 }
+
+export function alertMessage(message, scroll=true){
+  const alertHtml = `
+    <div class="alert-message">
+      <p class="alert-text">${message}</p>
+      <p class="alert-x">X</p>
+    </div>
+  `
+  if (scroll) window.scrollTo(0, 0)
+  document.querySelector('main').insertAdjacentHTML('beforebegin', alertHtml)
+
+  const alertElement = document.querySelector('.alert-message')
+
+  const closeButton = document.querySelector('.alert-x')
+  closeButton.addEventListener('click', () => {
+    alertElement.remove()
+  })
+}
