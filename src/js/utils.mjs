@@ -26,7 +26,7 @@ export function getParam(paramName){
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const paramValue = urlParams.get(paramName)
-  return paramValue
+  return paramValue ?? ''
 }
 
 export function renderListWithTemplate(templateFn, parentElement, list){
