@@ -15,7 +15,7 @@ function renderProductDetails(productData){
   productImage.setAttribute('src', `${productData.Images.PrimaryLarge}`)
   productImage.setAttribute('alt', productData.Name)
   
-  document.getElementById('compare-at-price').textContent = `$${productData.SuggestedRetailPrice}`  
+  document.querySelector('.compare-at-price').textContent = `$${productData.SuggestedRetailPrice}`  
   document.getElementById('product-price').textContent = `$${productData.FinalPrice}`
   document.getElementById('product-color').textContent = productData.Colors.ColorName
   document.getElementById('product-description').innerHTML = productData.DescriptionHtmlSimple
