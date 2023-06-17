@@ -2,8 +2,16 @@ import { setLocalStorage, getLocalStorage, alertMessage } from './utils.mjs';
 import { findProductById } from './externalServices.mjs';
 
 export default async function productDetails(productId){
-  const productData = await findProductById(productId)
-  renderProductDetails(productData)
+  try {
+    const productData = await findProductById(productId)
+    renderProductDetails(productData)
+  } catch {
+    document.querySelector('title').textContent = 'Sleep Outside | Product Not Found'
+    document.getElementById('product-name').textContent = 'Product Not Found'
+    document.querySelector('.discounted-tag').remove()
+    document.querySelector('#addToCart').remove()
+    document.querySelector('#product-image').remove()
+  }
 }
 
 function renderProductDetails(productData){
@@ -20,7 +28,7 @@ function renderProductDetails(productData){
   document.getElementById('product-color').textContent = productData.Colors.ColorName
   document.getElementById('product-description').innerHTML = productData.DescriptionHtmlSimple
 
-  document.getElementById('addToCart').setAttribute('data-id', productData.Id)  
+  document.getElementById('addToCart').setAttribute('data-id', productData.Id)
 }
 
 function addProductToCart(product) {
