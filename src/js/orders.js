@@ -16,8 +16,8 @@ function orderTemplate(order) {
 
 const mainEl = document.querySelector('main');
 
-getOrders().then((orders)=>{
+getOrders().then((orders) => {
   orders.map((order) =>
     mainEl.insertAdjacentHTML('beforeend', orderTemplate(order))
   );
-})
+});
