@@ -47,6 +47,11 @@ header {
   text-decoration: none;
   color: var(--font-body);
 }
+
+#search{
+  margin: 10px auto 0;
+}
+
 .hero {
   position: relative;
 }

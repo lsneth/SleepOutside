@@ -47,8 +47,8 @@ function loadTemplate(path){
 }
 
 export function loadHeaderFooter(){
-  const headerTemplateFn = loadTemplate("/partials/header.html");
-  const footerTemplateFn = loadTemplate("/partials/footer.html");
+  const headerTemplateFn = loadTemplate('/partials/header.html');
+  const footerTemplateFn = loadTemplate('/partials/footer.html');
 
   headerTemplateFn()
 
@@ -65,11 +65,11 @@ export function loadHeaderFooter(){
 
 export function getCartItemCount(){
   const cartItems = getLocalStorage('so-cart')
-  if (cartItems===null) return 0
+  if (cartItems === null) return 0
   return cartItems.length
 }
 
-export function alertMessage(message, scroll=true){
+export function alertMessage(message, scroll = true){
   const alertHtml = `
     <div class="alert-message">
       <p class="alert-text">${message}</p>
