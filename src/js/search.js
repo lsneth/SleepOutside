@@ -12,7 +12,5 @@ document.querySelector('body').insertAdjacentElement('afterbegin', form)
 
 form.addEventListener('submit', async (e)=>{
     e.preventDefault()
-    console.log(e.target.search.value)
-    const test = await fetch(baseURL + 'products')
-    console.log(test)
+    window.location.href = `/product-list/index.html?category=${e.target.search.value}`
 })
